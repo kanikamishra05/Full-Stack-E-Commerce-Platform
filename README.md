@@ -2,19 +2,9 @@
 
 Open-source single-store shop built with Next.js and Express. Includes auth, catalog, cart, Stripe checkout, orders, admin analytics, and real-time chat.
 
-[![MIT License](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
-[![Live Demo](https://img.shields.io/badge/Demo-Live-0070f3)](https://open-source-ecommerce.abdalrahman-aboalkhair.work)
-[![YouTube Walkthrough](https://img.shields.io/badge/Video-Walkthrough-red?logo=youtube)](https://www.youtube.com/watch?v=qJDXcQ_sxSI)
-
-**[Live demo](https://open-source-ecommerce.abdalrahman-aboalkhair.work)** · **[YouTube walkthrough](https://www.youtube.com/watch?v=qJDXcQ_sxSI)** · **[Local setup](#local-setup)** · [Repository](https://github.com/Abdelrahman-Aboalkhair/Full-Stack-E-Commerce-Platform)
 
 ![Storefront homepage](assets/screenshots/homepage.png)
 
-## Demo video
-
-[![Watch the full-stack walkthrough on YouTube](https://img.youtube.com/vi/qJDXcQ_sxSI/maxresdefault.jpg)](https://www.youtube.com/watch?v=qJDXcQ_sxSI)
-
-**[▶ Watch on YouTube](https://www.youtube.com/watch?v=qJDXcQ_sxSI)** — local Docker setup, storefront, cart, Stripe checkout, admin dashboard, and chat. Some screens may differ slightly from the current codebase.
 
 ## Screenshots
 
@@ -72,8 +62,6 @@ Open-source single-store shop built with Next.js and Express. Includes auth, cat
 ### Live demo (interactive, no backend)
 
 The storefront is hosted on Vercel with **`NEXT_PUBLIC_DEMO_MODE=true`** — a full in-browser mock (no API/database):
-
-**https://open-source-ecommerce.abdalrahman-aboalkhair.work**
 
 - Browse catalog, **sign in** (quick demo accounts on the sign-in page), use **cart**, **mock checkout**, **orders**, and the **admin dashboard**.
 - Data is simulated and stored in `localStorage` until you clear site data.
