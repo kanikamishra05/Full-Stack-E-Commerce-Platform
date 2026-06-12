@@ -5,6 +5,14 @@ import logger from "../infra/winston/logger";
 
 const router = Router();
 
+// Root route handler for general health checks
+router.all("/", (req, res) => {
+  res.status(200).json({
+    status: "OK",
+    message: "Welcome to the Full-Stack E-Commerce API",
+  });
+});
+
 // Basic health check
 router.get("/health", (req, res) => {
   res.status(200).json({
