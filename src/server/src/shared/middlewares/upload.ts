@@ -1,4 +1,5 @@
-import multer from "multer";
+import multer, { FileFilterCallback } from "multer";
+import { Request } from "express";
 
 const upload = multer({
   storage: multer.memoryStorage(),
