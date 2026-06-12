@@ -58,6 +58,8 @@ export class AuthController {
 
   signin = asyncHandler(async (req: Request, res: Response): Promise<void> => {
     const { email, password } = req.body;
+    console.log("Email received:", email);
+    console.log("Password received:", password);
     const { user, accessToken, refreshToken } = await this.authService.signin({
       email,
       password,

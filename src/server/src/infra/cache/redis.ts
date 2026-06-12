@@ -1,4 +1,5 @@
 import Redis from "ioredis";
+console.log("REDIS_URL =", JSON.stringify(process.env.REDIS_URL));
 
 const redis = new Redis(process.env.REDIS_URL!);
 

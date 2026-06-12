@@ -1,6 +1,14 @@
 import { addAlias } from "module-alias";
 import path from "path";
 
+process.on("uncaughtException", (err) => {
+  console.error("UNCAUGHT EXCEPTION:", err);
+});
+
+process.on("unhandledRejection", (err) => {
+  console.error("UNHANDLED REJECTION:", err);
+});
+
 // Dynamically set module alias based on NODE_ENV
 const isProduction = process.env.NODE_ENV === "production";
 const projectRoot = path.resolve(__dirname, ".."); // Move up from src to project root
@@ -25,4 +33,7 @@ async function bootstrap() {
   });
 }
 
-bootstrap();
+bootstrap().catch((err) => {
+  console.error("BOOTSTRAP ERROR:");
+  console.error(err);
+});

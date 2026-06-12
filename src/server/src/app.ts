@@ -33,6 +33,9 @@ dotenv.config();
 
 export const createApp = async () => {
   const app = express();
+  console.log("SESSION_SECRET:", !!process.env.SESSION_SECRET);
+  console.log("COOKIE_SECRET:", !!process.env.COOKIE_SECRET);
+  console.log("NODE_ENV:", process.env.NODE_ENV);
 
   await connectDB().catch((err) => {
     console.error("❌ Failed to connect to DB:", err);
@@ -79,7 +82,7 @@ export const createApp = async () => {
   );
   app.use(passport.initialize());
   app.use(passport.session());
-  configurePassport();
+  // configurePassport();
 
   // Preflight handler removed to avoid conflicts
 

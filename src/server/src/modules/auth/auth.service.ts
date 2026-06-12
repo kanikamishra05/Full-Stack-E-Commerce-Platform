@@ -65,7 +65,7 @@ export class AuthService {
     refreshToken: string;
   }> {
     const user = await this.authRepository.findUserByEmailWithPassword(email);
-
+    console.log("User found:", user);
     if (!user) {
       throw new BadRequestError("Email or password is incorrect.");
     }
@@ -73,10 +73,14 @@ export class AuthService {
     if (!user.password) {
       throw new AppError(400, "Email or password is incorrect.");
     }
+    console.log("User found:", user.email);
+    console.log("Stored hash:", user.password);
+    console.log("Entered password:", password);
     const isPasswordValid = await passwordUtils.comparePassword(
       password,
       user.password
     );
+    console.log("Password valid:", isPasswordValid);
     if (!isPasswordValid) {
       throw new AppError(400, "Email or password is incorrect.");
     }

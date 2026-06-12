@@ -1,5 +1,6 @@
 import prisma from "@/infra/database/database.config";
 import { ROLE } from "@prisma/client";
+import { passwordUtils } from "@/shared/utils/authUtils";
 
 export class AuthRepository {
   async findUserByEmail(email: string) {
@@ -41,8 +42,12 @@ export class AuthRepository {
     password: string;
     role: ROLE;
   }) {
+    const hashedPassword = await passwordUtils.hashPassword(data.password);
     return prisma.user.create({
-      data,
+      data: {
+      ...data,
+      password: hashedPassword,
+      },
       select: {
         id: true,
         name: true,
