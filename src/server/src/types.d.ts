@@ -12,8 +12,8 @@ declare namespace Express {
     user: any;
   }
 }
-declare module "express";
-declare module "jsonwebtoken";
-declare module "nodemailer";
-declare module "pdfkit";
-declare module "passport";
+// declare module "express";
+// declare module "jsonwebtoken";
+// declare module "nodemailer";
+// declare module "pdfkit";
+// declare module "passport";
