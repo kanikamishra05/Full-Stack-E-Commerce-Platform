@@ -8,9 +8,9 @@ const FOOTER_LINKS = [
   { href: "/sign-in", label: "Sign in" },
 ] as const;
 
-const REPO_URL =
-  "https://github.com/Abdelrahman-Aboalkhair/Full-Stack-E-Commerce-Platform";
-const DEVELOPER_URL = "https://www.abdalrahman-aboalkhair.work/";
+// const REPO_URL =
+//   "https://github.com/Abdelrahman-Aboalkhair/Full-Stack-E-Commerce-Platform";
+// const DEVELOPER_URL = "https://www.abdalrahman-aboalkhair.work/";
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
@@ -43,7 +43,7 @@ const Footer = () => {
                   </Link>
                 </li>
               ))}
-              <li>
+              {/* <li>
                 <a
                   href={REPO_URL}
                   target="_blank"
@@ -52,7 +52,7 @@ const Footer = () => {
                 >
                   Source code
                 </a>
-              </li>
+              </li> */}
             </ul>
           </nav>
         </div>
