@@ -15,6 +15,10 @@ const protect = async (
     if (!accessToken) {
       return next(new AppError(401, "Unauthorized, please log in"));
     }
+    console.log(
+      "ACCESS_TOKEN_SECRET exists:",
+      !!process.env.ACCESS_TOKEN_SECRET
+    );
 
     const decoded = jwt.verify(
       accessToken,
@@ -34,9 +38,15 @@ const protect = async (
 
     req.user = { id: decoded.id, role: user.role };
     next();
-  } catch (error) {
-    console.log(error);
-    return next(new AppError(401, "Invalid access token, please log in"));
+  // } catch (error) {
+  //   console.log(error);
+  //   return next(new AppError(401, "Invalid access token, please log in"));
+  }     catch (error: any) {
+          console.error("JWT VERIFY ERROR:", error);
+          console.error("ACCESS_TOKEN_SECRET exists:", !!process.env.ACCESS_TOKEN_SECRET);
+
+          return next(new AppError(401, "Invalid access token, please log in"));
+
   }
 };
 
