@@ -57,9 +57,6 @@ const Footer = () => {
           </nav>
         </div>
 
-        <div className="mt-8 pt-6 border-t border-gray-200 flex flex-col gap-2 sm:flex-row sm:items-center sm:justify-between text-sm">
-          <p>© {currentYear} Ecommerce.</p>
-        </div>
       </div>
     </footer>
   );
