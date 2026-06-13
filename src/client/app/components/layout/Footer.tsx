@@ -58,18 +58,7 @@ const Footer = () => {
         </div>
 
         <div className="mt-8 pt-6 border-t border-gray-200 flex flex-col gap-2 sm:flex-row sm:items-center sm:justify-between text-sm">
-          <p>© {currentYear} Ecommerce. Open source under MIT.</p>
-          <p>
-            Developed by{" "}
-            <a
-              href={DEVELOPER_URL}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="font-medium text-gray-900 hover:text-indigo-600"
-            >
-              Abdelrahman Aboalkhair
-            </a>
-          </p>
+          <p>© {currentYear} Ecommerce.</p>
         </div>
       </div>
     </footer>
