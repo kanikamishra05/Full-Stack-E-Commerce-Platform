@@ -31,7 +31,7 @@ const CartSummary: React.FC<CartSummaryProps> = ({
   const stripePromise = demoMode
     ? null
     : loadStripe(
-        "pk_test_51R9gs72KGvEXtMtXXTm7UscmmHYsvk9j3ktaM8vxRb3evNJgG1dpD05YWACweIfcPtpCgOIs4HkpGrTCKE1dZD0p00sLC6iIBg"
+        "pk_test_51ThSVPChgxpABnaK1sK3Qp5OYdfSODRKai2GtsC6QvQbsh5h7urQ9tZO7xlsaJgmomtU07XqiO0VjIQrw8rAWhgy00HoV4lOma"
       );
 
   const [initiateCheckout, { isLoading }] = useInitiateCheckoutMutation();
@@ -44,10 +44,12 @@ const CartSummary: React.FC<CartSummaryProps> = ({
 
   const handleInitiateCheckout = async () => {
     try {
-      const res = (await initiateCheckout(undefined).unwrap()) as {
-        sessionId?: string;
-        orderId?: string;
-      };
+      const res = (await initiateCheckout(undefined).unwrap();
+      console.log("Checkout Response:", res);
+      console.log("Session ID:", res.data?.sessionId);
+      //   sessionId?: string;
+      //   orderId?: string;
+      // };
 
       if (demoMode) {
         showToast("Order placed (demo)", "success");
@@ -58,8 +60,9 @@ const CartSummary: React.FC<CartSummaryProps> = ({
       }
 
       const stripe = await stripePromise;
+      
       const result = await stripe?.redirectToCheckout({
-        sessionId: res.sessionId!,
+        sessionId: res.data.sessionId,
       });
 
       if (result?.error) {
